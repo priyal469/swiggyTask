@@ -15,6 +15,7 @@ export default{
     dish_5:require('../assets/images/dish_5.png'),
     dish_6:require('../assets/images/dish_6.png'),
     dish_7:require('../assets/images/dish_7.png'),
-    itemList_image:require('../assets/images/itemList_image.jpg')
+    itemList_image:require('../assets/images/itemList_image.jpg'),
+    cartImage:require('../assets/images/cartImage.png'),
 
 }

@@ -3,6 +3,7 @@ import {View,Text,Image, ImageBackground,FlatList, ScrollView} from 'react-nativ
 import DishCategoryList from '../../Components/DishCategoryList';
 import RectangleBtn from '../../Components/RectangleBtn';
 import imagePath from '../../constants/imagePath';
+import navigationStrings from '../../constants/navigationStrings';
 import colors from '../../styles/colors';
 import styles from './styles';
 
@@ -14,37 +15,42 @@ import styles from './styles';
 dish_category:[
     { 
         id:1,
-        dish_image:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Thumbs_up_icon.svg/1200px-Thumbs_up_icon.svg.png'
+        dish_image:'http://designmadeinjapan.com/site/wp-content/uploads/2015/04/cover-japan-fake-food-display-dishes_001.jpg'
     },
     { 
         id:2,
-        dish_image:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Thumbs_up_icon.svg/1200px-Thumbs_up_icon.svg.png'
+        dish_image:'https://d20aeo683mqd6t.cloudfront.net/articles/title_images/000/038/265/original/GSpremium-%E3%83%8F%E3%83%B3%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC1-1024x698.jpg?2018&d=750x400'
     },
     { 
         id:3,
-        dish_image:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Thumbs_up_icon.svg/1200px-Thumbs_up_icon.svg.png'
+        dish_image:'http://designmadeinjapan.com/site/wp-content/uploads/2015/04/cover-japan-fake-food-display-dishes_001.jpg'
     },
     { 
         id:4,
-        dish_image:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Thumbs_up_icon.svg/1200px-Thumbs_up_icon.svg.png'
+        dish_image:'http://designmadeinjapan.com/site/wp-content/uploads/2015/04/cover-japan-fake-food-display-dishes_001.jpg'
     },
     { 
         id:5,
-        dish_image:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Thumbs_up_icon.svg/1200px-Thumbs_up_icon.svg.png'
+        dish_image:'http://designmadeinjapan.com/site/wp-content/uploads/2015/04/cover-japan-fake-food-display-dishes_001.jpg'
     },
     { 
         id:6,
-        dish_image:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Thumbs_up_icon.svg/1200px-Thumbs_up_icon.svg.png'
+        dish_image:'http://designmadeinjapan.com/site/wp-content/uploads/2015/04/cover-japan-fake-food-display-dishes_001.jpg'
     },
     { 
         id:7,
-        dish_image:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Thumbs_up_icon.svg/1200px-Thumbs_up_icon.svg.png"
+        dish_image:"http://designmadeinjapan.com/site/wp-content/uploads/2015/04/cover-japan-fake-food-display-dishes_001.jpg"
     }
 ]
          }
      }
+     onMove = () => {
+        const { navigation } = this.props;
+        navigation.navigate(navigationStrings.FOOD_ITEM_PAGE);
+    
+      }
      render(){
-         const{dish_category}=this.state;
+         const{dish_category,onMove}=this.state;
          return(
              <View style={{flex:1}}>
                  <View style={styles.topView}>
@@ -71,16 +77,16 @@ dish_category:[
                  </View>
 
                  
-                 {/* <FlatList horizontal={true} showsHorizontalScrollIndicator={false}
+                 <FlatList horizontal={true} showsHorizontalScrollIndicator={false}
           data={dish_category}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) =>
-            (<DishCategoryList data={item}  />)
+          keyExtractor={(item,index) => index.toString()}
+          renderItem={( {item} ) =>
+            (<DishCategoryList data={item} onMove={this.onMove}  />)
 
-          }/> */}
+          }/>
                  </View>
 
-                 <View style={{backgroundColor:colors.white,marginTop:10}}>
+                 {/* <View style={{backgroundColor:colors.white,marginTop:10}}>
                      <Text style={styles.all_restaurants_text}>
                          All Restaurants Nearby
                      </Text>
@@ -90,7 +96,7 @@ dish_category:[
                      <Image source={imagePath.dish_1}  style={{height:60,width:'100%',resizeMode:'contain'}}/>
 
                  </View>
-                 </View>
+                 </View> */}
 
                  
                 

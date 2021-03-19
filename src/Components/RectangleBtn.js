@@ -6,7 +6,7 @@ import colors from "../styles/colors";
 export default function RectangleBtn(props){
 const{onPressBtn,onText,onPressCloseModal}=props;
 return(
-<TouchableOpacity onPress={onPressBtn} style={styles.touchable_btn} >
+<TouchableOpacity onPress={onPressBtn} style={styles.touchable_btn}  >
     <Text style={styles.touchable_btn_text}>
 {onText}
     </Text>
