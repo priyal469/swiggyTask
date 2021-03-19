@@ -4,6 +4,10 @@ import FoodList from "../../Components/FoodList";
 import Header from "../../Components/Header";
 import navigationStrings from "../../constants/navigationStrings";
 
+
+
+
+
 export default  class FoodItemPage extends Component{
 constructor(props){
     super(props);
@@ -58,6 +62,15 @@ constructor(props){
     ]
     }
 }
+onItemAdd=()=>{
+    this.setState({
+        count:count+1
+    })
+    
+     
+   
+    
+}
 onAddToCart=()=>{
     const {count}=this.state;
     this.setState({
@@ -87,3 +100,4 @@ render(){
     )
 }
 }
+

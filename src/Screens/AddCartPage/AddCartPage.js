@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image, TextInput, FlatList } from "react-native";
+import Header from "../../Components/Header";
 
 
 
@@ -13,7 +14,7 @@ constructor(props){
     render(){
         return(
             <View>
-<Text>hello</Text>
+<Header onText='Order Bag' />
             </View>
         )
     }

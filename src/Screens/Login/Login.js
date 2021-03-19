@@ -6,6 +6,7 @@ import Header from '../../Components/Header';
 import RectangleBtn from '../../Components/RectangleBtn';
 
 
+
 import imagePath from '../../constants/imagePath';
 import navigationStrings from '../../constants/navigationStrings';
 import styles from './styles';
@@ -20,6 +21,7 @@ import styles from './styles';
 
          }
      }
+    
      render(){
          const{navigation}=this.props;
          return(
