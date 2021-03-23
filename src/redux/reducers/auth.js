@@ -2,15 +2,17 @@ import types from "../types"
 
 
 const initialState={
-    count=0
+    userData:{},
+   isLoggedIn:false
 }
-    export default function reducers(state=initialState,action){
+    export default function authReducers(state=initialState,action){
         switch(action.type){
-           case types.ADD_CART :
-            return{
-                ...state,
-                count:[...state.count,count + 1]
-            }
+           
+           case types.LOGIN:
+               const{userData}={...action.payload};
+               return{
+                   ...state,userData,isLoggedIn:true
+               }
             default:
             return state
         }

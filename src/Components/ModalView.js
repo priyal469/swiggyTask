@@ -10,7 +10,7 @@ const{onPressCloseModal,isModalVisible}=props;
                visible={isModalVisible} >
 
 <View style={styles.modalView}>
-    <BorderTextInput placeholder='Enter number'/>
+    <BorderTextInput placeholder='Enter number' />
     <RectangleBtn onText='Send OTP' onPressBtn={onPressCloseModal} />
 
 </View>

@@ -4,12 +4,11 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import imagePath from "../constants/imagePath";
 import navigationStrings from "../constants/navigationStrings";
 import colors from "../styles/colors";
+import {connect} from 'react-redux'
+ function Header(props){
 
-
-export default function Header(props){
-
-    const{headerText,incrementCount,onMove}=props;
-    
+    const{headerText,incrementCount,onMove,cartArray}=props;
+    console.log("in header",cartArray)
     return(
             
         <View style={styles.headerView}>
@@ -18,13 +17,21 @@ export default function Header(props){
        <TouchableOpacity onPress={onMove}>
        <Image source={imagePath.cartImage} style={styles.cartImage} />
        </TouchableOpacity>
-        <Text style={styles.cartCount}>{incrementCount}</Text>
+        <Text style={styles.cartCount}>{cartArray.length}</Text>
         <Text></Text>
         </View>
                   
                  
     )
 }
+const mapStateToProps=state=>(
+    {
+        cartArray:state.home.cartArray
+    }
+   
+)
+ export default connect(mapStateToProps)(Header)
+
 const styles= StyleSheet.create({
    headerView:{
 height:50,

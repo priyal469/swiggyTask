@@ -17,5 +17,7 @@ export default{
     dish_7:require('../assets/images/dish_7.png'),
     itemList_image:require('../assets/images/itemList_image.jpg'),
     cartImage:require('../assets/images/cartImage.png'),
+    plus_image:require('../assets/images/plus_image.png'),
+    minus_image:require('../assets/images/minus_image.png')
 
 }

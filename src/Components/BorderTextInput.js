@@ -5,9 +5,10 @@ import colors from "../styles/colors";
 
 
 export default function BorderTextInput(props){
-    const{placeholder}=props;
+    const{placeholder,_onChangeText,inputKey}=props;
     return(
-        <TextInput placeholder={placeholder} style={styles.text_input}/>
+        <TextInput placeholder={placeholder} style={styles.text_input} onChangeText={()=>_onChangeText(inputKey)} 
+        />
     )
 }
 const styles=StyleSheet.create({

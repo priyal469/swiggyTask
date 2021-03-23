@@ -6,11 +6,14 @@ import AuthStack from "./AuthStack";
 import MainStack from "./MainStack";
 const Stack=createStackNavigator();
 
-export default function Routes(){
+export default function Routes(props){
+    const{isLoggedIn}=props;
     return(
+      
 <NavigationContainer>
     <Stack.Navigator>
-        {AuthStack()}
+{/* {isLoggedIn ? <>{MainStack()}</>:<>{AuthStack()}</>} */}
+         {AuthStack()}
         {MainStack()}
     </Stack.Navigator>
 </NavigationContainer>

@@ -13,7 +13,7 @@ import imagePath from '../constants/imagePath';
 import colors from '../styles/colors';
 import RectangleBtn from './RectangleBtn';
 
- export default function FoodList (props){
+  function FoodList (props){
 
     
     const {data,onAddToCart}=props;
@@ -28,7 +28,7 @@ import RectangleBtn from './RectangleBtn';
               <Text style={styles.item_name}>{data.item_name}</Text>
               <Text style={styles.item_description}>{data.item_description}</Text>
               <Text style={styles.item_price}>{data.item_price}</Text>
-              <RectangleBtn onText="Add to cart" onPressBtn={onAddToCart}/>
+              <RectangleBtn onText="Add to cart" onPressBtn={()=>onAddToCart(data.id) }/>
               </View>
             
            
@@ -37,6 +37,7 @@ import RectangleBtn from './RectangleBtn';
        
     )
  }
+ 
  const styles=StyleSheet.create({
      mainView:
      {
@@ -68,3 +69,4 @@ import RectangleBtn from './RectangleBtn';
         color:colors.textGreyLight
     },
  })
+ export default FoodList;
